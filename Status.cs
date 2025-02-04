@@ -11,7 +11,7 @@ namespace TexTRPG
 
         static public void StatusCheck()         // 상태 보기
         {
-            Console.WriteLine("\n상태 보기 \n캐릭터의 정보가 표시됩니다.\n");
+            Console.WriteLine("\n<상태 보기>\n캐릭터의 정보가 표시됩니다.\n");
 
             Console.WriteLine($"Lv. {Player.lv}");
             Console.WriteLine($"{Player.name} ( {Player.job} ) ");

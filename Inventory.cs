@@ -9,27 +9,23 @@ namespace TexTRPG
     public class Inventory
     {
 
+        public static List<Item> InvenItem = new List<Item>();
+
         static public void InventoryCheck()
         {
-            Console.WriteLine("\n인벤토리 \n보유 중인 아이템을 관리할 수 있습니다.\n");
+            Console.WriteLine("\n<인벤토리> \n보유 중인 아이템을 관리할 수 있습니다.\n");
             Console.WriteLine("[아이템 목록]\n");
 
-            List<Item> inven = new List<Item>();
 
-            for (int i = 0; i < inven.Count; i++)
-            {
-                Console.Write($"- {i + 1}.");
-                //if (inven.equipped)
-                //{
-                //    Console.Write("[E]");
-                //}
-                //else
-                //{
-                //    Console.WriteLine($"{inven[i].itemName} | {inven[i].def} {inven[i].explain}");
-                //}
-            }
-
-            // 인벤 목록 구현!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //for (int i = 0; i < InvenItem.Count; i++)
+            //{
+            //    Console.Write($"- {i + 1}.");
+            //    if (InvenItem.isEquipped)
+            //    {
+            //        Console.Write("[E] ");
+            //    }
+            //        Console.WriteLine($"{InvenList[i].itemName} | {inven[i].def} {inven[i].explain}");
+            //}
 
 
 
