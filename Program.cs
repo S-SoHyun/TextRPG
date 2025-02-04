@@ -10,30 +10,12 @@ namespace TexTRPG
     {
         //  변수 목록
         static public int choose;
-        static public string userName = "Unknown";
+        static public string userName = "unknown";
 
 
 
         static void Main(string[] args)
         {
-            Player player = new Player(01, userName, "전사", 10, 5, 100, 1500);
-
-            //List<Item> itemList = new List<Item>();
-
-            //Item basicArmor = new Item("수련자 갑옷", 5, "수련에 도움을 주는 갑옷입니다.", 1000, "방어력", false, false);
-            //Item steelArmor = new Item("무쇠갑옷", 9, "무쇠로 만들어져 튼튼한 갑옷입니다.", 1500, "방어력", false, false);
-            //Item sArmor = new Item("스파르타의 갑옷", 15, "스파르타의 전사들이 사용했다는 전설의 갑옷입니다.", 1000, "방어력", false, false);
-            //Item sword = new Item("낡은 검", 2, "쉽게 볼 수 있는 낡은 검 입니다.", 1000, "공격력", false, false);
-            //Item axe = new Item("청동 도끼", 5, "어디선가 사용됐던거 같은 도끼입니다.", 1000, "공격력", false, false);
-            //Item spear = new Item("스파르타의 창", 7, "스파르타의 전사들이 사용했다는 전설의 창입니다.", 1000, "공격력", false, false);
-
-            //itemList.Add(basicArmor);
-            //itemList.Add(steelArmor);
-            //itemList.Add(sArmor);
-            //itemList.Add(sword);
-            //itemList.Add(axe);
-            //itemList.Add(spear);
-
             SelectName();
         }
 
@@ -49,6 +31,8 @@ namespace TexTRPG
 
         static public void SelectName()         // 이름 선택
         {
+            Console.Clear();
+
             Console.WriteLine("스파르타 던전에 오신 전사님, 환영합니다.");
             Console.WriteLine("원하시는 이름을 입력해주세요.\n");
 
@@ -61,6 +45,7 @@ namespace TexTRPG
 
             if (choose == 1)
             {
+                Player player = new Player(1, userName, "전사", 10, 5, 100, 1500);
                 GameStart();
             }
             else if (choose == 2)
@@ -69,7 +54,8 @@ namespace TexTRPG
             }
             else
             {
-                Console.WriteLine("잘못된 입력입니다.");
+                Console.WriteLine("잘못된 입력입니다.\n");
+                Thread.Sleep(500);
                 SelectName();
             }
         }
@@ -77,10 +63,11 @@ namespace TexTRPG
 
         static public void GameStart()         // 게임 스타트
         {
-            Console.WriteLine("\n스파르타 마을에 오신 여러분 환영합니다.");
+            Console.Clear();
+
+            Console.WriteLine($"스파르타 마을에 오신 전사님 환영합니다.");
             Console.WriteLine("이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.");
-            Console.Write("\n");
-            Console.WriteLine("1. 상태 보기\n2. 인벤토리\n3. 상점\n");
+            Console.WriteLine("\n1. 상태 보기\n2. 인벤토리\n3. 상점\n");
 
             int choose = UserInput();
 
@@ -94,12 +81,12 @@ namespace TexTRPG
             }
             else if (choose == 3)
             {
-                Store.AddItem();
                 Store.InStore();
             }
             else
             {
                 Console.WriteLine("잘못된 입력입니다.");
+                Thread.Sleep(500);
                 GameStart();
             }
         }

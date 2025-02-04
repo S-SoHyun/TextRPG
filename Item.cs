@@ -9,26 +9,25 @@ namespace TexTRPG
     public class Item
     {       
             public string itemName;
-            public int stat;
+            public int power; // 공격력 / 방어력 수치
             public string explain;
             public int itemGold;
             public bool isBought;
             public bool isEquipped;
-            public string type;
+            public string powerType;
             public int itemNumber;
 
-            public Item(string _itemName, int _stat, string _explain, int _itemGold, string _type, bool _isBought, bool _isEquipped, int _itemNumber)
+            public Item(string _itemName, int _power, string _explain, int _itemGold, string _powerType, bool _isBought, bool _isEquipped, int _itemNumber)
             {
                 itemName = _itemName;
-                stat = _stat;
+                power = _power;
                 explain = _explain;
                 itemGold = _itemGold;
-                type = _type;
+                powerType = _powerType;
                 isBought = _isBought;
                 isEquipped = _isEquipped;
                 itemNumber = _itemNumber;
             }
-
-        }
+    }
  }
 
