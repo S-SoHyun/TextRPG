@@ -69,12 +69,14 @@ namespace TexTRPG
             Console.WriteLine("이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.");
             Console.WriteLine("\n1. 상태 보기");
             Console.WriteLine("2. 인벤토리");
-            Console.WriteLine("3. 상점\n");
+            Console.WriteLine("3. 상점");
+            Console.WriteLine("4. 던전 입장");
+            Console.WriteLine("5. 휴식하기\n");
 
 
             int choose = UserInput();
 
-            while (choose != 1 && choose != 2 && choose != 3)    // 제시된 숫자 이외의 것을 고를 경우 알림
+            while (choose != 1 && choose != 2 && choose != 3 && choose != 4 && choose != 5)    // 제시된 숫자 이외의 것을 고를 경우 알림
             {
                 Console.WriteLine("잘못된 입력입니다.");
                 choose = UserInput();
@@ -92,6 +94,14 @@ namespace TexTRPG
             else if (choose == 3)
             {
                 Store.InStore();    // 상점으로 감
+            }
+            else if (choose == 4)
+            {
+                // 던전 프로그램 만들어서 함수 넣기
+            }
+            else if(choose == 5)
+            {
+                Rest.Resting();
             }
         }
     }
