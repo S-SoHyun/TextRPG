@@ -8,10 +8,11 @@ namespace TexTRPG
 {
     public class Status
     {
-        static int atkSum;
-        static int defSum;
+        // 변수 목록
+        static int atkSum;    // 공격력 합계
+        static int defSum;    // 방어력 합계
 
-        static private int AtkSum()
+        static private int AtkSum()    // 파워 타입이 공격력이고 장착했다면 다 더함
         {
             atkSum = 0;
             foreach (var item in Inventory.InvenItem)
@@ -23,7 +24,7 @@ namespace TexTRPG
             }
             return atkSum;
         }
-        static private int DefSum()
+        static private int DefSum()    // 파워 타입이 방어력이고 장착했다면 다 더함
         {
             defSum = 0;
             foreach (var item in Inventory.InvenItem)
@@ -54,7 +55,7 @@ namespace TexTRPG
             Console.WriteLine($"{Player.userName} ( {Player.job} ) ");
 
 
-            if (atkSum != 0)
+            if (atkSum != 0)    // 공격력 합계가 0이 아니면 (+ n) 추가
             {
                 Console.WriteLine($"공격력 : {Player.atk + atkSum} (+{atkSum})");
             }
@@ -63,7 +64,7 @@ namespace TexTRPG
                 Console.WriteLine($"공격력 : {Player.atk}");
             }
 
-            if (defSum != 0)
+            if (defSum != 0)    // 방어력 합계가 0이 아니면 (+ n) 추가
             {
                 Console.WriteLine($"방어력 : {Player.def + defSum} (+{defSum})");
             }
@@ -82,7 +83,7 @@ namespace TexTRPG
             int choose = Program.UserInput();
             
 
-            while (choose != 0)
+            while (choose != 0)    // 제시된 숫자 이외의 것을 고를 경우 알림
             {
                 Console.WriteLine("잘못된 입력입니다.\n");
                 choose = Program.UserInput();
@@ -92,18 +93,6 @@ namespace TexTRPG
             {
                 Program.GameStart();
             }
-
-
-            //if (choose == 0)
-            //{
-            //    Program.GameStart();
-            //}
-            //else
-            //{
-            //    Console.WriteLine("잘못된 입력입니다.\n");
-
-            //    Program.UserInput();
-            //}
         }
     }
 }
