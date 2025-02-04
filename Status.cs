@@ -8,11 +8,12 @@ namespace TexTRPG
 {
     public class Status
     {
-        static int atkSum = 0;
-        static int defSum = 0;
+        static int atkSum;
+        static int defSum;
 
         static private int AtkSum()
         {
+            atkSum = 0;
             foreach (var item in Inventory.InvenItem)
             {
                 if (item.powerType == "공격력" && item.isEquipped)
@@ -24,6 +25,7 @@ namespace TexTRPG
         }
         static private int DefSum()
         {
+            defSum = 0;
             foreach (var item in Inventory.InvenItem)
             {
                 if (item.powerType == "방어력" && item.isEquipped)
@@ -43,10 +45,13 @@ namespace TexTRPG
             AtkSum();
             DefSum();
 
-            Console.WriteLine("<상태 보기>\n캐릭터의 정보가 표시됩니다.\n");
+            Console.WriteLine("<상태 보기>");
+            Console.WriteLine("캐릭터의 정보가 표시됩니다.\n");
+
+            Console.WriteLine("〓〓〓〓〓〓〓〓〓");
 
             Console.WriteLine($"Lv. {Player.lv}");
-            Console.WriteLine($"{Player.name} ( {Player.job} ) ");
+            Console.WriteLine($"{Player.userName} ( {Player.job} ) ");
 
 
             if (atkSum != 0)
@@ -68,22 +73,37 @@ namespace TexTRPG
             }
 
             Console.WriteLine($"체 력 : {Player.hp}");
-            Console.WriteLine($"Gold : {Player.gold} G\n");
+            Console.WriteLine($"Gold : {Player.gold} G");
+
+            Console.WriteLine("〓〓〓〓〓〓〓〓〓\n");
 
             Console.WriteLine("0. 나가기\n");
 
             int choose = Program.UserInput();
+            
+
+            while (choose != 0)
+            {
+                Console.WriteLine("잘못된 입력입니다.\n");
+                choose = Program.UserInput();
+            }
 
             if (choose == 0)
             {
                 Program.GameStart();
             }
-            else
-            {
-                Console.WriteLine("잘못된 입력입니다.\n");
 
-                Program.UserInput();
-            }
+
+            //if (choose == 0)
+            //{
+            //    Program.GameStart();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("잘못된 입력입니다.\n");
+
+            //    Program.UserInput();
+            //}
         }
     }
 }

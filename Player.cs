@@ -9,7 +9,7 @@ namespace TexTRPG
     public class Player
     {
        static public int lv = 1;
-       static public string name;
+       static public string userName;
        static public string job = "전사";
        static public int atk = 10;
        static public int def = 5;
@@ -17,10 +17,10 @@ namespace TexTRPG
        static public int gold = 1500;
 
 
-        public Player(int _lv, string _name, string _job, int _atk, int _def, int _hp, int _gold)
+        public Player(int _lv, string _userName, string _job, int _atk, int _def, int _hp, int _gold)
         {
             lv = _lv;
-            name = _name;
+            userName = _userName;
             job = _job;
             atk = _atk;
             def = _def;

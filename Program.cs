@@ -10,8 +10,7 @@ namespace TexTRPG
     {
         //  변수 목록
         static public int choose;
-        static public string userName = "unknown";
-
+        static public string userName;
 
 
         static void Main(string[] args)
@@ -71,6 +70,13 @@ namespace TexTRPG
 
             int choose = UserInput();
 
+            while (choose != 1 && choose != 2 && choose != 3)
+            {
+                Console.WriteLine("잘못된 입력입니다.");
+                choose = UserInput();
+            }
+
+
             if (choose == 1)
             {
                 Status.StatusCheck();
@@ -82,12 +88,6 @@ namespace TexTRPG
             else if (choose == 3)
             {
                 Store.InStore();
-            }
-            else
-            {
-                Console.WriteLine("잘못된 입력입니다.");
-                Thread.Sleep(500);
-                GameStart();
             }
         }
     }
