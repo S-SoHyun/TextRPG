@@ -97,7 +97,10 @@ namespace TexTRPG
             }
             else if (choose == 4)
             {
-                // 던전 프로그램 만들어서 함수 넣기
+                Console.WriteLine("오류가 발생했습니다.");
+                Console.WriteLine("3초 후 마을로 돌아갑니다.");
+                Thread.Sleep(3000);
+                GameStart();
             }
             else if(choose == 5)
             {
