@@ -155,6 +155,67 @@ namespace TexTRPG
             {
                 InStore();    // 상점으로 돌아감
             }
+
+            // ItemSell() 미구현 - isBought, isEquipped를 이용해서 간편하게 처리하고 싶었는데 잘 안 됐음
+            //static private void ItemSell() 
+            //{
+            //    Console.Clear();
+
+            //    Console.WriteLine("<상점 - 아이템 판매>");
+            //    Console.WriteLine(" 필요한 아이템을 얻을 수 있는 상점입니다.\n");
+            //    Console.WriteLine($"[보유 골드]\n{Player.gold} G \n");
+
+            //    Console.WriteLine("[아이템 목록]");
+            //    Console.WriteLine("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n");
+
+
+            //    Inventory.AllocateNumber();
+
+            //    for (int i = 0; i < Inventory.InvenItem.Count; i++)
+            //    {
+            //        Console.Write($"- ");
+            //        if (Inventory.InvenItem[i].isBought)   // 산 거 다시 돌려놓기
+            //        {
+            //            Inventory.InvenItem[i].isBought = false;
+            //        }
+            //        Console.WriteLine($" {Inventory.InvenItem[i].itemNumber} {Inventory.InvenItem[i].itemName} | {Inventory.InvenItem[i].powerType} + {Inventory.InvenItem[i].power} | {Inventory.InvenItem[i].explain} | {Inventory.InvenItem[i].itemGold * 0.85} G");
+            //    }
+
+            //    Console.WriteLine("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n");
+
+            //    Console.WriteLine("0. 나가기\n");
+            //    int choose = Program.UserInput();
+
+            //    while (choose != 0)
+            //    {
+            //        if (choose > 0 && choose <= Inventory.InvenItem.Count)
+            //        {
+            //            if (!Inventory.InvenItem[choose - 1].isBought)    // 이미 판매한 경우
+            //            {
+            //                Console.WriteLine("이미 판매한 아이템입니다.");
+            //            }
+            //            else if (Inventory.InvenItem[choose - 1].isBought && Inventory.InvenItem[choose - 1].isEquipped)    // 판매 안 했는데 장착이 된 경우
+            //            {
+            //                Inventory.InvenItem[choose - 1].isEquipped = false;
+            //                Inventory.InvenItem[choose - 1].isBought = false;
+            //                Player.gold += Inventory.InvenItem[choose - 1].itemGold * 0.85f;
+            //                Inventory.InvenItem.Remove(Inventory.InvenItem[choose - 1]);
+            //                Console.WriteLine("아이템을 성공적으로 판매하였습니다.");
+            //            }
+            //            else if (Inventory.InvenItem[choose - 1].isBought && Inventory.InvenItem[choose - 1].isEquipped == false) // 판매 안 했는데 장착은 안 된 경우
+            //            {
+            //                Inventory.InvenItem[choose - 1].isBought = false;
+            //                Player.gold += Inventory.InvenItem[choose - 1].itemGold * 0.85f;
+            //                Console.WriteLine("아이템을 성공적으로 판매하였습니다.");
+            //            }
+            //        }
+            //        else    // 제시된 숫자 이외의 것을 고를 경우 알림
+            //        {
+            //            Console.WriteLine("잘못된 입력입니다.\n");
+            //        }
+
+            //        choose = Program.UserInput();
+            //    }
         }
     }
 }
