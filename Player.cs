@@ -14,10 +14,10 @@ namespace TexTRPG
        static public int atk = 10;
        static public int def = 5;
        static public int hp = 100;
-       static public float gold = 1500;
+       static public int gold = 1500;
 
 
-        public Player(int _lv, string _userName, string _job, int _atk, int _def, int _hp, float _gold)
+        public Player(int _lv, string _userName, string _job, int _atk, int _def, int _hp, int _gold)
         {
             lv = _lv;
             userName = _userName;

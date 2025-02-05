@@ -10,16 +10,8 @@ namespace TexTRPG
     {
         public static List<Item> InvenItem = new List<Item>();    // 인벤템 리스트 생성. 상점에서 구매한 아이템이 여기로 들어올 것
 
-        static public void AllocateNumber()    // 아이템이 들어오는 순서대로 번호 할당
+        static private void AllocateNumber()    // 아이템이 들어오는 순서대로 번호 할당
         {
-            foreach (var item in InvenItem)
-            {
-                if (item.isBought == false)
-                {
-                    InvenItem.Remove(item);
-                }
-            }
-
             for (int i = 0; i < InvenItem.Count; i++)
             {
                 InvenItem[i].itemNumber = i + 1;
@@ -29,8 +21,6 @@ namespace TexTRPG
         static public void InventoryCheck()    // 인벤토리 확인 창
         {
             AllocateNumber();
-
-            
 
             Console.Clear();
 

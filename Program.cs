@@ -1,7 +1,18 @@
-﻿namespace TexTRPG
+﻿using System.Data;
+using System.Net;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
+
+namespace TexTRPG
 {
-    internal class Program
+    public class Program
     {
+        //  변수 목록
+        static public int choose;
+        static public string userName;
+
+
         static void Main(string[] args)
         {
             SelectName();
@@ -86,9 +97,8 @@
             }
             else if (choose == 4)
             {
-                Console.WriteLine("던전이 공사 중입니다.");
-                Console.WriteLine("현재 들어갈 수 없습니다.");
-                Console.WriteLine("3초 후에 마을로 돌아갑니다.");
+                Console.WriteLine("오류가 발생했습니다.");
+                Console.WriteLine("3초 후 마을로 돌아갑니다.");
                 Thread.Sleep(3000);
                 GameStart();
             }

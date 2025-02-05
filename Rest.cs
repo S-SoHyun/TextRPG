@@ -48,6 +48,7 @@ namespace TexTRPG
             {
                 Program.GameStart();    // 게임 시작 창으로 돌아감
             }
+
         }
     }
 }
